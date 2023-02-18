@@ -1,0 +1,72 @@
+{
+  "extends": ["next/core-web-vitals", "next", 
+  "plugin:@next/next/recommended",
+  "plugin:@typescript-eslint/recommended",
+  "plugin:react/recommended",
+  "plugin:react-hooks/recommended",
+  "plugin:prettier/recommended",
+  "plugin:react-prefer-function-component/recommended"],
+  "plugins": [
+    "unused-imports",
+    "eslint-plugin-tsdoc",
+    "tailwindcss",
+    "import",
+    "jsx-a11y",
+    "react-hooks",
+    "react",
+    "@emotion",
+    "react-prefer-function-component"
+  ],
+  "rules": {
+    "import/no-anonymous-default-export": "error",
+    "@emotion/styled-import": "error",
+    "@emotion/no-vanilla": "error",
+    "import/no-duplicates": ["error"],
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "@/*",
+            "group": "internal"
+          },
+          {
+            "pattern": "@mdisrupt/*",
+            "group": "internal"
+          }
+        ],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc" }
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off", // todo(arlyon): fix
+    "react/prop-types": "off",
+    "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ],
+    "tsdoc/syntax": "warn",
+    "tailwindcss/no-contradicting-classname": "error",
+    "jsx-a11y/alt-text": [
+      "warn",
+      {
+        "elements": ["img"],
+        "img": ["Image"]
+      }
+    ],
+    "jsx-a11y/aria-props": "warn",
+    "jsx-a11y/aria-proptypes": "warn",
+    "jsx-a11y/aria-unsupported-elements": "warn",
+    "jsx-a11y/role-has-required-aria-props": "warn",
+    "jsx-a11y/role-supports-aria-props": "warn",
+    "no-console": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "endOfLine": "off",
+    "react/no-unescaped-entities": 0
+  }
+}

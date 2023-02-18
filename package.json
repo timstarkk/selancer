@@ -1,0 +1,80 @@
+{
+  "babelMacros": {
+    "twin": {
+      "preset": "emotion"
+    }
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "nextlint": "next lint",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "db:generate": "npx prisma generate && eslint src --fix",
+    "db:seed": "prisma db seed",
+    "storybook": "start-storybook -p 6006",
+    "typecheck": "tsc",
+    "build:storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.5",
+    "@prisma/client": "^4.10.1",
+    "@tanstack/react-query": "^4.24.6",
+    "@trpc/client": "^10.11.1",
+    "@trpc/next": "^10.11.1",
+    "@trpc/react": "^9.27.4",
+    "@trpc/react-query": "^10.11.1",
+    "@trpc/server": "^10.11.1",
+    "next": "^13.1.1",
+    "prisma-trpc-generator": "^1.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
+    "superjson": "^1.12.2",
+    "zod": "^3.20.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@emotion/babel-plugin": "^11.10.5",
+    "@emotion/eslint-plugin": "^11.10.0",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@tailwindcss/typography": "^0.5.8",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "babel-loader": "^9.1.0",
+    "babel-plugin-macros": "^3.1.0",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-prefer-function-component": "^1.0.0",
+    "eslint-plugin-storybook": "^0.6.10",
+    "eslint-plugin-tailwindcss": "^3.8.3",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "prettier": "^2.7.1",
+    "prisma": "^4.10.1",
+    "tailwindcss": "^3.2.4",
+    "ts-node": "^10.9.1",
+    "twin.macro": "^3.1.0",
+    "typescript": "^4.8.4"
+  },
+  "prisma": {
+    "seed": "ts-node ./prisma/seed.ts"
+  },
+  "version": "0.0.0"
+}

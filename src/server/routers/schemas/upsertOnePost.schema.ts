@@ -1,0 +1,21 @@
+import { z } from 'zod'
+
+import { PostCreateInputObjectSchema } from './objects/PostCreateInput.schema'
+import { PostSelectObjectSchema } from './objects/PostSelect.schema'
+import { PostUncheckedCreateInputObjectSchema } from './objects/PostUncheckedCreateInput.schema'
+import { PostUncheckedUpdateInputObjectSchema } from './objects/PostUncheckedUpdateInput.schema'
+import { PostUpdateInputObjectSchema } from './objects/PostUpdateInput.schema'
+import { PostWhereUniqueInputObjectSchema } from './objects/PostWhereUniqueInput.schema'
+
+export const PostUpsertSchema = z.object({
+  select: PostSelectObjectSchema.optional(),
+  where: PostWhereUniqueInputObjectSchema,
+  create: z.union([
+    PostCreateInputObjectSchema,
+    PostUncheckedCreateInputObjectSchema,
+  ]),
+  update: z.union([
+    PostUpdateInputObjectSchema,
+    PostUncheckedUpdateInputObjectSchema,
+  ]),
+})

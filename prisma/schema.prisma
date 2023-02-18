@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+generator trpc {
+  provider           = "prisma-trpc-generator"
+  output             = "../src/server/routers"
+  withMiddleware     = false
+  withShield         = false
+  contextPath        = "../src/server/context"
+  isGenerateSelect   = true
+  isGenerateInclude  = true
+}
+
+model Post {
+  id    String @id @default(uuid())
+  title String
+  text  String
+  // To return `Date`s intact through the API we use transformers
+  // https://trpc.io/docs/data-transformers
+  // This is unique so it can be used for cursor-based pagination
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
+
+model Project {
+  id String @id @default(uuid())
+  title String
+  url String
+  github String
+  description String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
