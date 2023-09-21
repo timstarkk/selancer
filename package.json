@@ -13,6 +13,7 @@
     "lint:fix": "eslint src --fix",
     "db:generate": "npx prisma generate && eslint src --fix",
     "db:seed": "prisma db seed",
+    "db:push": "prisma db push",
     "storybook": "start-storybook -p 6006",
     "typecheck": "tsc",
     "build:storybook": "build-storybook"
